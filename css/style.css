@@ -7,7 +7,7 @@
     margin: 40px 0;
 }
 .logo img{
-    width: 100px;
+    width: 250px;
 }
 .logo h2{
     font-size: 30px;
@@ -31,4 +31,15 @@
     background:rgb(55,166,223) ;
     border: none;
     cursor: pointer;
+}
+table{
+    width: 100%;
+    text-align: center;
+    border-collapse:collapse ;
+    font-size: 20px;
+}
+th{
+    background:rgb(55,166,223) ;
+    color: white;
+    padding: 5px 0;
 }
