@@ -13,10 +13,7 @@ $patientEmail =   $_POST['email'];
 $patientDate  =   $_POST['date'];
 $submit       =   $_POST['submit'];
 
-if($submit){
-    $query = "INSERT INTO patients (name,email,date) VALUE ('$patientName' ,'$patientEmail','$patientDate')";
-    $result = mysqli_query($conn,$query);
-}
+
 
 ?>
 
@@ -40,10 +37,19 @@ if($submit){
     <p>Welcome to Angel Hospital, Please fill the inputs with your personal informations </p>
     <form action="index.php" method="post">
         <input type="text" placeholder="Enter Your Name" name="name" >
-        <input type="text" placeholder="Enter Your Email" name="email" >
+        <input type="email" placeholder="Enter Your Email" name="email" >
         <input type="date"  name="date" >
         <input type="submit" value="reserve now"  name="submit" >
-
+        <p <?php 
+        if($submit){
+            $query = "INSERT INTO patients (name,email,date) VALUE ('$patientName' ,'$patientEmail','$patientDate')";
+            $result = mysqli_query($conn,$query);
+            echo "<p style='color:green'>"."reservation done"."</p>";
+        }else{
+            echo "<p style='color:red'>"."somthing went wrong,pleasr try again"."</p>";
+        
+        }
+        ?> ></p>
     </form>
     </div>
 
